@@ -1,0 +1,27 @@
+﻿@model IEnumerable<EmployeeManagement.Models.Employee>
+@{
+}
+<html>
+    <head></head>
+    <body>
+        <table border="1px">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Department</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach(var emp in Model)
+        {
+            <tr>
+                <th>@emp.Id</th>
+                <th>@emp.Name</th>
+                <th>@emp.Department</th>
+            </tr>
+        }
+        </tbody>
+    </table>
+    </body>
+</html>
