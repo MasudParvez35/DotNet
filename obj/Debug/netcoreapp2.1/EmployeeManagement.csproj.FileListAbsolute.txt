@@ -52,3 +52,4 @@ D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Emp
 D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\EmployeeManagement.csproj.CopyComplete
 D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\EmployeeManagement.sourcelink.json
 D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.cshtml.g.cs
+D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
