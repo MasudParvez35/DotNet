@@ -3,22 +3,21 @@
     ViewBag.Title = "Employee List";
 }
 
-<table border="1px">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Department</th>
-        </tr>
-    </thead>
-    <tbody>
-    @foreach(var emp in Model)
+<div class="card-deck">
+    @foreach(var employee in Model)
     {
-        <tr>
-            <th>@emp.Id</th>
-            <th>@emp.Name</th>
-            <th>@emp.Department</th>
-        </tr>
+        <div class="card m-3">
+            <div class="card-header">
+                <h3>@employee.Name</h3>
+            </div>
+            <img class="card-img-top" src="~/images/parvez.jpeg"/>
+            <div class="card-footer text-center">
+                <a asp-controller="home" asp-action="details" asp-route-id="@employee.Id" 
+                class="btn btn-primary">View</a>
+                @* <a href="/home/details/@employee.Id" class="btn btn-primary">View</a> *@
+                <a href="#" class="btn btn-primary">Edit</a>
+                <a href="#" class="btn btn-danger">Delete</a>
+            </div>
+        </div>
     }
-    </tbody>
-</table>
+</div>

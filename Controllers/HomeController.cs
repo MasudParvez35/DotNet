@@ -17,7 +17,7 @@ namespace EmployeeManagement.Controllers
             _employeeRepository = employeeRepository;
         }
         [Route("")]
-        [Route("Home")]
+        [Route("Home")] 
         [Route("Home/Index")]
         public ViewResult Index()
         {

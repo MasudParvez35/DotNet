@@ -55,3 +55,4 @@ D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Raz
 D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
 D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
+D:\DotNet\Code\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp2.1\libman.json
