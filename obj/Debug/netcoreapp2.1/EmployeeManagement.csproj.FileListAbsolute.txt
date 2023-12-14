@@ -57,3 +57,6 @@ D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Raz
 D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
 D:\DotNet\Code\EmployeeManagement\EmployeeManagement\bin\Debug\netcoreapp2.1\libman.json
 D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\Home\Create.cshtml.g.cs
+D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\Home\Edit.cshtml.g.cs
+D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\Account\Register.cshtml.g.cs
+D:\DotNet\Code\EmployeeManagement\EmployeeManagement\obj\Debug\netcoreapp2.1\Razor\Views\Account\Login.cshtml.g.cs
