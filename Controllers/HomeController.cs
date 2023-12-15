@@ -4,9 +4,11 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using System;
+using Microsoft.AspNetCore.Authorization;
 
 namespace EmployeeManagement.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly  IEmployeeRepository _employeeRepository;
@@ -25,6 +27,7 @@ namespace EmployeeManagement.Controllers
         [Route("")]
         [Route("Home")] 
         [Route("Home/Index")]
+        [AllowAnonymous]
         public ViewResult Index()
         {
             var model = _employeeRepository.GetAllEmployee();
@@ -44,10 +47,33 @@ namespace EmployeeManagement.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Create(EmployeeCreateViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                string uniqueFileName = ProcessUploadedFile(model);
+
+                Employee newEmployee = new Employee
+                {
+                    Name = model.Name,
+                    Email = model.Email,
+                    Department = model.Department,
+                    // Store the file name in PhotoPath property of the employee object
+                    // which gets saved to the Employees database table
+                    PhotoPath = uniqueFileName
+                };
+
+                _employeeRepository.Add(newEmployee);
+                return RedirectToAction("details", new { id = newEmployee.Id });
+            }
+
+            return View();
+        }
         public ViewResult Edit(int id)
         {
             Employee employee = _employeeRepository.GetEmployee(id);
-            EmployeeEditViewModel emplloyeeEditviewModel = new EmployeeEditViewModel()
+            EmployeeEditViewModel employeeEditViewModel = new EmployeeEditViewModel
             {
                 Id = employee.Id,
                 Name = employee.Name,
@@ -55,8 +81,9 @@ namespace EmployeeManagement.Controllers
                 Department = employee.Department,
                 ExistingPhotoPath = employee.PhotoPath
             };
-            return View(emplloyeeEditviewModel);
+            return View(employeeEditViewModel);
         }
+        [HttpPost]
         public IActionResult Edit(EmployeeEditViewModel model)
         {
             // Check if the provided data is valid, if not rerender the edit view
@@ -96,7 +123,6 @@ namespace EmployeeManagement.Controllers
 
                 return RedirectToAction("index");
             }
-
             return View(model);
         }
 
@@ -121,30 +147,6 @@ namespace EmployeeManagement.Controllers
             }
 
             return uniqueFileName;
-        }
-
-        [HttpPost]
-        public IActionResult Create(EmployeeCreateViewModel model)
-        {
-            if (ModelState.IsValid)
-            {
-                string uniqueFileName = ProcessUploadedFile(model);
-
-                Employee newEmployee = new Employee
-                {
-                    Name = model.Name,
-                    Email = model.Email,
-                    Department = model.Department,
-                    // Store the file name in PhotoPath property of the employee object
-                    // which gets saved to the Employees database table
-                    PhotoPath = uniqueFileName
-                };
-
-                _employeeRepository.Add(newEmployee);
-                return RedirectToAction("details", new { id = newEmployee.Id });
-            }
-
-            return View();
         }
     }
 }
